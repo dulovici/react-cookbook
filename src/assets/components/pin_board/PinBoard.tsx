@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 const PinBoard = () => {
   const [pins, setPins] = useState<any>([]);
+  const [removedPins, setRemovedPins] = useState<any>([]);
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const { clientX, clientY } = e;
@@ -10,21 +11,36 @@ const PinBoard = () => {
   };
 
   const handleReset = () => {
-    console.log("reset");
+    setPins([]);
+    setRemovedPins([]);
   };
+
   const handleUndo = () => {
-    console.log("undo");
+    const pinState = [...pins];
+    const undoPin = pinState.pop();
+    setRemovedPins([...removedPins, undoPin]);
+    setPins(pinState);
   };
+
   const handleRedo = () => {
-    console.log("redo");
+    const undoPins = [...removedPins];
+    const redoPin = undoPins.pop();
+    setPins([...pins, redoPin]);
+    setRemovedPins(undoPins);
   };
 
   return (
     <>
       <div>
-        <button onClick={handleReset}>RESET</button>
-        <button onClick={handleUndo}>UNDO</button>
-        <button onClick={handleRedo}>REDO</button>
+        <button disabled={!pins.length} onClick={handleReset}>
+          RESET
+        </button>
+        <button disabled={!pins.length} onClick={handleUndo}>
+          UNDO
+        </button>
+        <button disabled={!removedPins.length} onClick={handleRedo}>
+          REDO
+        </button>
       </div>
 
       <div onClick={handleClick} style={{ height: "100vh", marginTop: "20px" }}>
