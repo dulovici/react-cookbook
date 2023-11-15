@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Slide from "./Slide";
 
 const slides = [
@@ -9,9 +9,10 @@ const slides = [
 
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const lastSlide = currentIndex === slides.length - 1;
+  const [isActive, setIsActive] = useState(false);
 
-  let interval: number | undefined;
+  const lastSlide = currentIndex === slides.length - 1;
+  const intervalRef = useRef(0);
 
   const prevHandler = () => {
     setCurrentIndex((prev) => prev - 1);
@@ -22,7 +23,11 @@ const ImageSlider = () => {
   };
 
   const startHandler = () => {
-    interval = setInterval(() => {
+    if (isActive) return;
+
+    setIsActive(true);
+
+    intervalRef.current = setInterval(() => {
       setCurrentIndex((prev) => {
         if (prev === slides.length - 1) return 0;
         return prev + 1;
@@ -31,7 +36,8 @@ const ImageSlider = () => {
   };
 
   const stopHandler = () => {
-    clearInterval(interval);
+    setIsActive(false);
+    clearInterval(intervalRef.current);
   };
 
   return (
@@ -39,10 +45,10 @@ const ImageSlider = () => {
       <Slide url={slides[currentIndex]} />
 
       <div>
-        <button disabled={!currentIndex} onClick={prevHandler}>
+        <button disabled={isActive || !currentIndex} onClick={prevHandler}>
           Prev
         </button>
-        <button disabled={lastSlide} onClick={nextHandler}>
+        <button disabled={isActive || lastSlide} onClick={nextHandler}>
           Next
         </button>
 
