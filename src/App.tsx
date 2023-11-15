@@ -1,5 +1,6 @@
 import "./App.css";
-import StopLight from "./assets/components/stop_light/StopLight";
+import DropdownPicker from "./assets/components/dropdown_picker/DropdownPicker";
+// import StopLight from "./assets/components/stop_light/StopLight";
 // import PassCode from "./assets/components/pass_code/PassCode";
 // import ImageSlider from "./assets/components/image_slider/ImageSlider";
 // import FileTree from "./assets/components/file_tree/FileTree";
@@ -19,7 +20,8 @@ function App() {
       {/* <FileTree /> */}
       {/* <ImageSlider /> */}
       {/* <PassCode /> */}
-      <StopLight />
+      {/* <StopLight /> */}
+      <DropdownPicker />
     </div>
   );
 }

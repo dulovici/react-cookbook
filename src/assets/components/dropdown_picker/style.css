@@ -1,0 +1,37 @@
+.container {
+    padding-top: 20px;
+}
+
+.fruit-checkbox-container {
+    margin: auto;
+    padding: 10px;
+    margin-top: 10px;
+    width: 50%;
+    border: 1px solid gray;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px; /* Adjust the gap as needed */
+  }
+  
+  .fruit-checkbox-container div {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+  
+  /* Style for checkboxes and labels */
+  .fruit-checkbox-container input[type="checkbox"] {
+    margin-right: 5px; /* Adjust the margin as needed */
+  }
+  
+  .fruit-checkbox-container label {
+    cursor: pointer;
+    user-select: none
+  }
+
+  .form-btns {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px  
+  }
+
