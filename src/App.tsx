@@ -1,5 +1,6 @@
 import "./App.css";
-import ImageSlider from "./assets/components/image_slider/ImageSlider";
+import PassCode from "./assets/components/pass_code/PassCode";
+// import ImageSlider from "./assets/components/image_slider/ImageSlider";
 // import FileTree from "./assets/components/file_tree/FileTree";
 // import MemoryGame from "./assets/components/memory_game/first/MemoryGame";
 // import Memory from "./assets/components/memory_game/Memory";
@@ -15,7 +16,8 @@ function App() {
       {/* <PinBoard /> */}
       {/* <Memory /> */}
       {/* <FileTree /> */}
-      <ImageSlider />
+      {/* <ImageSlider /> */}
+      <PassCode />
     </div>
   );
 }
