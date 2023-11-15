@@ -5,6 +5,8 @@ const slides = [
   "https://images.freeimages.com/variants/k1wQB7egQotJ7Hr3ZBPP1S5c/f4a36f6589a0e50e702740b15352bc00e4bfaf6f58bd4db850e167794d05993d",
   "https://images.freeimages.com/images/large-previews/76e/green-field-landscape-1337336.jpg",
   "https://images.freeimages.com/images/large-previews/c11/field-1367922.jpg",
+  "https://images.freeimages.com/images/large-previews/224/wheat-field-1323744.jpg",
+  "https://images.freeimages.com/images/large-previews/d01/misty-field-1358966.jpg",
 ];
 
 const ImageSlider = () => {
@@ -52,8 +54,12 @@ const ImageSlider = () => {
           Next
         </button>
 
-        <button onClick={startHandler}>Play</button>
-        <button onClick={stopHandler}>Stop</button>
+        <button disabled={isActive} onClick={startHandler}>
+          Play
+        </button>
+        <button disabled={!isActive} onClick={stopHandler}>
+          Stop
+        </button>
       </div>
     </div>
   );
