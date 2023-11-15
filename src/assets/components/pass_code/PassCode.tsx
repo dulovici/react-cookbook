@@ -49,7 +49,7 @@ const PassCode = () => {
           {num}
         </button>
       ))}
-      <h5>{standBy ? "You need to wait for some time" : ""}</h5>
+      <h5>{standBy ? "Wrong password. You need to wait for some time" : ""}</h5>
     </div>
   );
 };
