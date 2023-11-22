@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { generateRandomColor, shuffle } from "./utils";
+import { generateRandomColor } from "./utils";
 import { usePopup } from "./hooks";
+import { shuffleArray } from "../../utils/utils";
 
 const ColorPickerQuiz = () => {
   const [collor, setCollor] = useState("");
@@ -17,7 +18,7 @@ const ColorPickerQuiz = () => {
   };
 
   const buttons = useMemo(() => {
-    return shuffle([collor, generateRandomColor(), generateRandomColor()]);
+    return shuffleArray([collor, generateRandomColor(), generateRandomColor()]);
   }, [collor]);
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import "./App.css";
-import DropdownPicker from "./recepies/dropdown_picker/DropdownPicker";
+import PuzzleGame from "./recepies/puzzle_game/PuzzleGame";
 
 function App() {
   return (
@@ -12,7 +12,8 @@ function App() {
       {/* <ImageSlider /> */}
       {/* <PassCode /> */}
       {/* <StopLight /> */}
-      <DropdownPicker />
+      {/* <DropdownPicker /> */}
+      <PuzzleGame />
     </div>
   );
 }
