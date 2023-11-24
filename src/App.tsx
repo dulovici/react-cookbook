@@ -1,6 +1,4 @@
 import "./App.css";
-import IntervalTicker from "./recepies/clock/IntervalTicker";
-import SimpleTicker from "./recepies/clock/SimpleTicker";
 
 function App() {
   return (
@@ -15,7 +13,8 @@ function App() {
       {/* <StopLight /> */}
       {/* <DropdownPicker /> */}
       {/* <PuzzleGame /> */}
-      <SimpleTicker />
+      {/* <SimpleTicker /> */}
+      {/* <IntervalTicker /> */}
     </div>
   );
 }

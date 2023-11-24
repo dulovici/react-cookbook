@@ -6,8 +6,10 @@ const useClock = (formatOrInterval: string | number) => {
     typeof formatOrInterval === "string"
       ? formatOrInterval
       : "YYYY-MM-DDTHH:mm:ss.SSS";
+
   const interval =
     typeof formatOrInterval === "number" ? formatOrInterval : 500;
+
   const [response, setResponse] = useState(moment(new Date()).format(format));
 
   useEffect(() => {
