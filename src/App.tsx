@@ -1,5 +1,6 @@
 import "./App.css";
-import PuzzleGame from "./recepies/puzzle_game/PuzzleGame";
+import IntervalTicker from "./recepies/clock/IntervalTicker";
+import SimpleTicker from "./recepies/clock/SimpleTicker";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       {/* <PassCode /> */}
       {/* <StopLight /> */}
       {/* <DropdownPicker /> */}
-      <PuzzleGame />
+      {/* <PuzzleGame /> */}
+      <SimpleTicker />
     </div>
   );
 }
